@@ -1,0 +1,77 @@
+/*
+Error: Invalid CSS after "...lor}: #{$value}": expected "{", was ";"
+        on line 4 of C:/Users/Informatika/Desktop/Ugnius CodeAcademy/bootstrap-4.0.0-beta.2/scss/_root.scss
+        from line 11 of C:\Users\Informatika\Desktop\Ugnius CodeAcademy\bootstrap-4.0.0-beta.2\scss\bootstrap.scss
+
+1: :root {
+2:   // Custom variable values only support SassScript inside `#{}`.
+3:   @each $color, $value in $colors {
+4:     --#{$color}: #{$value};
+5:   }
+6: 
+7:   @each $color, $value in $theme-colors {
+8:     --#{$color}: #{$value};
+9:   }
+
+Backtrace:
+C:/Users/Informatika/Desktop/Ugnius CodeAcademy/bootstrap-4.0.0-beta.2/scss/_root.scss:4
+C:\Users\Informatika\Desktop\Ugnius CodeAcademy\bootstrap-4.0.0-beta.2\scss\bootstrap.scss:11
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:304:in `each_directive'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:219:in `special_directive'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:194:in `directive'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:299:in `to_tree'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:313:in `block in visit_import'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:88:in `block in with_import'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:88:in `with_import'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/bin/sass:18:in `load'
+C:/Users/Informatika/Downloads/KoalaPortable/App/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...lor}: #{$value}\": expected \"{\", was \";\"\A         on line 4 of C:/Users/Informatika/Desktop/Ugnius CodeAcademy/bootstrap-4.0.0-beta.2/scss/_root.scss\A         from line 11 of C:\Users\Informatika\Desktop\Ugnius CodeAcademy\bootstrap-4.0.0-beta.2\scss\bootstrap.scss\A \A 1: :root {\A 2:   // Custom variable values only support SassScript inside `#{}`.\A 3:   @each $color, $value in $colors {\A 4:     --#{$color}: #{$value};\A 5:   }\A 6: \A 7:   @each $color, $value in $theme-colors {\A 8:     --#{$color}: #{$value};\A 9:   }"; }

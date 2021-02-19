@@ -1,0 +1,27 @@
+.alldiv {
+    width: 70px;
+    height: 70px;
+
+}
+.blue {
+    background-color: blue;
+    display: inline-block;
+    border-bottom-left-radius: 50px;
+
+
+}
+
+.green{
+    background-color: green;
+    display: inline-block;  
+    border-top-right-radius: 50px;
+
+
+
+    
+}
+#width {
+    width:800px;
+    
+
+}

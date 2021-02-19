@@ -1,0 +1,42 @@
+.device {
+
+border: 1px solid black;
+height: 500px;
+width: 50%;
+margin:auto;
+padding: 10px;
+}
+
+
+
+.display
+{
+
+    width: 100%;
+    border: 1px solid black;
+    height: 90px;
+    font-size:90px;
+
+}
+
+.number {
+
+    height: 100px;
+    border: 1px solid black;
+    width:110px;
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+
+}
+
+.operator {
+
+    border: 1px solid black;
+    height: 90px;
+    float: left;
+    width: 110px;
+    margin-top: 10px;
+
+    margin-right: 10px;
+}
