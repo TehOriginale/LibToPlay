@@ -6,21 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-</head> 
-<body class="text-center">
-    <main>
-        <form>
-            <label for="inputEmail">
-                Email adress
-            </label>
-            <input>
-                
-            <label>
-                Password
-            </label>
-            <input> 
-
-        </form>
-    </main>
+</head>
+<body>
+    
 </body>
 </html>
