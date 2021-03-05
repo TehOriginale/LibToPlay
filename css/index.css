@@ -1,12 +1,21 @@
 
 .Index_main
 {
-    width: 300px;
+    width: 100%;
     
 
 }
 .form-control
 {
-    width: 100%;
-   
+    width: 320px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+ 
 }
+form
+{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+} 

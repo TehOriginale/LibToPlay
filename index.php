@@ -32,8 +32,9 @@
     <label for="ImputGame3">Game#3</label>
     <input type="ThirdGame" class="form-control" id="ImputGame3" placeholder="Declare your third game">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  
 </form>
+<button type="submit" class="btn btn-primary">Submit</button>
   </main>
 </body>
 </html>
