@@ -1,3 +1,7 @@
+body
+{
+    background-color: #ebb589;
+}
 
 .Index_main
 {
@@ -7,6 +11,7 @@
 }
 .form-control
 {
+  
     width: 320px;
     margin-left: 20px;
     margin-right: 20px;
@@ -15,7 +20,22 @@
 }
 form
 {
+   margin-top: 180px;
     text-align: center;
     display: flex;
     justify-content: center;
 } 
+.dropdown
+{
+    position: absolute;
+    top:0; 
+    right:0;
+}
+#SubButton
+{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    
+}
