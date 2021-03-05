@@ -14,7 +14,7 @@
 <body class="text-center">
     <main class="form-signin">
         <form>
-            <img >
+            <img class="mb-4"src="content/test_logo.png" alt="" width="140" height="200">
             <h1>Login</h1>
             <label for="inputEmail" class="visually-hidden">
                 Email adress
