@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel ="stylesheet">
 </head>
 <body>
     <div>
@@ -15,11 +16,12 @@
   <h2>Button Tags</h2>
   <a href="Cia reikia login page linko" class="btn btn-info" role="button">Login</a>
   </div>
-
+  <main class = "Index_main" > 
+    
   <form>
   <div class="filter-group">
     <label for="ImputGame1">Game#1</label>
-    <input type="FirstGame" class="form-control" id="ImputGame1" placeholder="Declare your first game">
+    <input type="FirstGame" class="form-control" id="ImputGame1" placeholder="Declare your first game" >
    
   </div>
   <div class="filter-group">
@@ -32,5 +34,6 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+  </main>
 </body>
 </html>

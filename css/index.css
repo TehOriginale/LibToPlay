@@ -1,6 +1,12 @@
-filter-group
+
+.Index_main
 {
-    margin-bottom: 10px;
-    margin-left:  15px;
+    width: 300px;
     
+
+}
+.form-control
+{
+    width: 100%;
+   
 }
