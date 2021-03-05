@@ -13,19 +13,19 @@
 
 <body class="text-center">
     <main class="form-signin">
-        <form>
+        <form action="login.inc.php" method="post">
             <a href="index.php"><img class="mb-4"src="content/test_logo.png" alt="" width="140" height="200"></a>
             <h1>Login</h1>
-            <label for="inputEmail" class="visually-hidden">
-                Email adress
+            <label for="inputLogin" class="visually-hidden">
+                Email adress / Username
             </label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+            <input type="login" name="login" id="inputLogin" class="form-control" placeholder="Email address / Username" required>
             <label for="inputPassword" class="visually-hidden">
                 Password
             </label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
     
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Login</button>
 
             
         </form>

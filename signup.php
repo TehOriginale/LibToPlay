@@ -13,20 +13,22 @@
 
 <body class="text-center">
     <main class="form-signin">
-        <form>
+        <form action="signup.inc.php" method="post">
             <a href="index.php"><img class="mb-4"src="content/test_logo.png" alt="" width="140" height="200"></a>
             <h1>Sign up</h1>
             <label for="inputEmail" class="visually-hidden">
                 Email adress
             </label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+            <label for="inputUsername" class = "visualy-hidden">Username</label>
+            <input type="username" name="user" id="inputUsername" class="form-control" placeholder="Username" required>
             <label for="inputPassword" class="visually-hidden">
                 Password
             </label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
             <label for="confirmPassword" class="visually-hidden"> Confirm Password </label>
-            <input type="confirm" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <input type="confirm" name="pwdrepeat" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+            <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Sign Up</button>
 
             
         </form>
