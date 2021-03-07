@@ -13,7 +13,7 @@
 
 <body class="text-center">
     <main class="form-signin">
-        <form action="signup.inc.php" method="post">
+        <form action="includes/signup.inc.php" method="post">
             <a href="index.php"><img class="mb-4"src="content/test_logo.png" alt="" width="140" height="200"></a>
             <h1>Sign up</h1>
             <label for="inputEmail" class="visually-hidden">
