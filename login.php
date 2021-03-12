@@ -19,7 +19,7 @@
             <label for="inputLogin" class="visually-hidden">
                 Email adress / Username
             </label>
-            <input type="login" name="login" id="inputLogin" class="form-control" placeholder="Email address / Username" required>
+            <input type="login" name="uid" id="inputLogin" class="form-control" placeholder="Email address / Username" required>
             <label for="inputPassword" class="visually-hidden">
                 Password
             </label>
@@ -27,7 +27,13 @@
     
             <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Login</button>
 
-            
+            <?php
+            if (isset($_GET["error"])) {
+                if($_GET["error"] == "wronglogin") {
+                    echo "<p>Incorrect login information!</p>";
+                }
+            }
+            ?>
         </form>
         <div class="box-signin">
         New to LibToPlay? 

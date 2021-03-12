@@ -27,16 +27,34 @@
             </label>
             <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
             <label for="confirmPassword" class="visually-hidden"> Confirm Password </label>
-            <input type="confirm" name="pwdrepeat" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+            <input type="password" name="pwdrepeat" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
             <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Sign Up</button>
-
-            
+            <?php
+            if (isset($_GET["error"])) {
+                if($_GET["error"] == "invalidUid") {
+                    echo "<p>Choose a valid username!</p>";
+                }
+                else if($_GET["error"] == "passwordsdontmatch") {
+                    echo "<p>Passwords don't match!</p>";
+                }
+                else if($_GET["error"] == "usernametaken") {
+                    echo "<p>Username already taken</p>";
+                }
+                else if($_GET["error"] == "stmtfailed") {
+                    echo "<p>Something went wrong! Try again</p>";
+                }
+                else if($_GET["error"] == "none") {
+                    echo "<p>You have signed up!</p>";
+                }
+            }
+        ?>
         </form>
         <div class="box-signin">
         Already have an account? 
         <div class="divider"></div>
         <a id="signin" href="login.php">Login</a>
         </div>
+
         
     </main>
 </body>
