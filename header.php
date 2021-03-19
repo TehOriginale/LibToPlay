@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    if($_SESSION['Active'] == false){ /* Redirects user to login.php if not logged in */
+      header("index.php");
+      exit;
+  
+          }
 ?>
 <!DOCTYPE html>
 <html lang="en">
