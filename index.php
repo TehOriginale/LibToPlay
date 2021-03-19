@@ -1,7 +1,6 @@
   <?php
   include_once 'header.php';
   ?>
-  
   <form>
   <?php
   if(isset($_SESSION["useruid"])) {
