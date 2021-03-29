@@ -1,6 +1,14 @@
-body
-{
-    background-color: #ebb589;
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto Mono', monospace;
+}
+
+
+
+body {
+  background-color: #2d2b2d;
+  color: white;
 }
 
 .Index_main
