@@ -35,6 +35,11 @@
             }
             ?>
         </form>
+        <?php
+        if($_GET["error"] == "nones") {
+                    echo "<p>You have signed up!</p>";
+                }
+        ?>
         <div class="box-signin">
         New to LibToPlay? 
         <div class="divider"></div>
