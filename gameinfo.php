@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>-->
+<?php
+include_once 'header.php';
+?>
+
 <div class = "gamePhoto" >
 <figure class="figure">
 <a style="float:right" class="LogoItem" href = "/RDR2Art"> <img src ="content/RDR2Art.jpg" alt = "ZaidimoArt" height = "600" width = "260">

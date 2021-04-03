@@ -23,7 +23,7 @@
 </head>
 <body>
 <div>
-  <a class="LogoItem" href = "/index.php"> <img src ="content/test_logo.png" alt = "Logotipias" height = "26" width = "26">
+  <a class="LogoItem" href = "/index.php"> <img src ="content/test_logo.png" alt = "Logotipias" height = "40" width = "30">
 </a>
 </div>
 <div class="dropdown">

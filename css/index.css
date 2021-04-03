@@ -4,8 +4,6 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
-
-
 body {
   background-color: #2d2b2d;
   color: white;
@@ -46,4 +44,9 @@ form
     align-items: center;
     height: 200px;
     
+}
+
+.figure
+{
+    margin-top: 15px;
 }
