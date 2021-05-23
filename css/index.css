@@ -27,9 +27,8 @@ body {
 form
 {
    margin-top: 180px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+
+    
 } 
 .dropdown
 {
@@ -39,11 +38,8 @@ form
 }
 #SubButton
 { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     height: 200px;
-    
 }
 
 .figure
@@ -54,4 +50,11 @@ form
 .btn 
 {
     background-color: magenta;
+}
+
+.filters 
+{
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
