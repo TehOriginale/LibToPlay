@@ -17,3 +17,11 @@ if(isset($_POST['query'])) {
         echo "<p class='list-group-item border-1'>No record</p>";
     }
 }
+if(isset($_GET["submit"])) {
+    $firstgame = $_GET['firstgame'];
+    $secondgame = $_GET['secondgame'];
+    $thirdgame = $_GET['thirdgame'];
+    echo "<script>console.log('Debug Objects: " . $firstgame . "' );</script>";
+    header("location: ../searchpage.php?firstgame=$firstgame&secondgame=$secondgame&thirdgame=$thirdgame");
+    exit();
+}

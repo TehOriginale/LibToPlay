@@ -4,6 +4,19 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+.listas {
+    width: 80%;
+    position: absolute;
+    left:10%;
+}
+
+.listasContainer{
+    position: relative;
+}
+
+.listasPoint {
+    margin-top: 10px;
+}
 body {
   background-color: #2d2b2d;
   color: white;

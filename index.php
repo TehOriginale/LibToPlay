@@ -1,7 +1,7 @@
   <?php
   include_once 'header.php';
   ?>
-  <form action="includes/index.inc.php" method="post">
+  <form action="includes/index.inc.php" method="get">
   <?php
   if(isset($_SESSION["useruid"])) {
             echo "<p>Hello there " . $_SESSION["useruid"] ."<p>";
@@ -24,7 +24,7 @@
   </div>
   </div>
   <div id ="SubButton">
-  <button type="submit" class="btn">Submit</button>
+  <button type="submit" name="submit" class="btn">Submit</button>
   </div>
 </form>
 </main>

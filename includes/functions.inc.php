@@ -18,8 +18,7 @@ function pwdMatch($pwd, $pwdRepeat) {
 }
 
 function uidExists($conn, $username, $email) {
-    $sql = "SELECT * FROM users WHER
-    E usersUid = ? OR usersEmail = ?;";
+    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../signup.php?error=stmtfailed");
@@ -42,7 +41,7 @@ function uidExists($conn, $username, $email) {
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $username, $email, $pwd, $pwdRepeat) {
+function createUser($conn, $username, $email, $pwd) {
     $sql = "INSERT INTO users (usersEmail, usersUid, usersPwd) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
@@ -80,4 +79,28 @@ function loginUser($conn, $username, $pwd) {
         header("location: ../index.php");
         exit();
     }
+}
+
+function getGames($conn) {
+    if(isset($_GET["firstgame"]) || isset($_GET["secondgame"]) || isset($_GET["thirdgame"])) {
+        $firstgame = $_GET["firstgame"];
+        $secondgame = $_GET["secondgame"];
+        $thirdgame = $_GET["thirdgame"];
+    }
+    $sql = "SELECT * FROM games WHERE gamesName != ? AND gamesName != ? AND gamesName != ?;";
+    $ret = array();
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../searchpage.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sss", $firstgame, $secondgame, $thirdgame);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    while($ar = mysqli_fetch_assoc($resultData))
+        {
+            $ret[] = $ar;
+        }
+    mysqli_stmt_close($stmt);
+    return $ret;
 }
