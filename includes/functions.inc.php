@@ -87,7 +87,7 @@ function getGames($conn) {
         $secondgame = $_GET["secondgame"];
         $thirdgame = $_GET["thirdgame"];
     }
-    $sql = "SELECT * FROM games WHERE gamesName != ? AND gamesName != ? AND gamesName != ?;";
+    $sql = "SELECT * FROM games WHERE gamesName != ? AND gamesName != ? AND gamesName != ?";
     $ret = array();
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
@@ -95,6 +95,40 @@ function getGames($conn) {
         exit();
     }
     mysqli_stmt_bind_param($stmt, "sss", $firstgame, $secondgame, $thirdgame);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    while($ar = mysqli_fetch_assoc($resultData))
+        {
+            $ret[] = $ar;
+        }
+    mysqli_stmt_close($stmt);
+    return $ret;
+}
+
+function getGame($conn, $name) {
+    $sql = "SELECT * FROM games WHERE gamesName = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../gameinfo.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $name);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    $ret = mysqli_fetch_assoc($resultData);
+    mysqli_stmt_close($stmt);
+    return $ret;
+}
+
+function getTags($conn, $name) {
+    $sql = "SELECT tags.tag FROM games, itemid, tags WHERE games.gamesName = ? AND games.gamesId = itemid.gamesId AND itemid.tagId = tags.tagId";
+    $ret = array();
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../gamesinfo.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $name);
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
     while($ar = mysqli_fetch_assoc($resultData))

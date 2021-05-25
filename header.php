@@ -23,8 +23,9 @@
 </head>
 <body>
 <div>
-  <a class="LogoItem" href = "/index.php"> <img src ="content/test_logo.png" alt = "Logotipias" height = "40" width = "30">
+  <a class="LogoItem" href = "/index.php"> <img src ="content/test_logo.png" alt = "Logotipias" height = "50" width = "40">
 </a>
+LibToPlay
 </div>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" style="background-color: magenta"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
