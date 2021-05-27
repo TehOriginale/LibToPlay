@@ -107,6 +107,7 @@ function getAllGames($conn) {
 
 function getAllSortGames($tags, $conn) {
     $ret = array();
+    $buf = array();
     foreach($tags as $key=>$val) {
         $sql = "SELECT * FROM games,tagitems,tags WHERE tags.tag = ? AND games.gamesId = tagitems.gamesId AND tagitems.tagId = tags.tagId";
         $stmt = mysqli_stmt_init($conn);
@@ -119,7 +120,10 @@ function getAllSortGames($tags, $conn) {
         $resultData = mysqli_stmt_get_result($stmt);
         while($ar = mysqli_fetch_assoc($resultData))
             {
-                $ret[] = $ar;
+                if(!(in_array($ar['gamesName'], $buf))) {
+                    $ret[] = $ar;
+                    $buf[] = $ar['gamesName'];
+                }
             }
     }
     mysqli_stmt_close($stmt);
