@@ -15,7 +15,7 @@
     <main class="form-signin">
         <form action="includes/signup.inc.php" method="post">
             <a href="index.php"><img class="mb-4"src="content/test_logo.png" alt="" width="140" height="200"></a>
-            <h1>Sign up</h1>
+            <h1 style = "color: #008fff; font-style: Italic">Sign up</h1>
             <label for="inputEmail" class="visually-hidden">
                 Email adress
             </label>
@@ -50,9 +50,9 @@
         ?>
         </form>
         <div class="box-signin">
-        Already have an account? 
+        Already have an account?
         <div class="divider"></div>
-        <a id="signin" href="login.php">Login</a>
+        <a id="signin" href="login.php" style = "color: #ef0cdf">Login</a>
         </div>
 
         

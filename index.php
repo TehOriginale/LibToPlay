@@ -12,8 +12,7 @@
     <label for="ImputGame1">Game#1</label>
     <input type="text" name="firstgame" id="inputgame1" class="form-control" placeholder="Declare your first game" >
   </div>
-  <div class="col-md-5" style="position:relative;margin-top:100px;margin-left:-800px;">
-  </div>
+  
   <div class="filter-group">
     <label for="ImputGame2">Game#2</label>
     <input type="text" name="secondgame" id="inputgame2" class="form-control" placeholder="Declare your second game">
@@ -24,7 +23,7 @@
   </div>
   </div>
   <div id ="SubButton">
-  <button type="submit" name="submit" class="btn">Submit</button>
+  <button type="submit" name="submit" class="btn" style =  "margin-top: 40px">Submit</button>
   </div>
 </form>
 </main>
