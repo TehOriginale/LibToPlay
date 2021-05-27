@@ -35,12 +35,7 @@ $tags = getTags($conn, $name);
 <i>Tags: 
 <?php
 foreach($tags as $el) {
-<<<<<<< HEAD
-
-  echo '|'.$el['tag'].'';
-=======
   echo ''.$el.' ';
->>>>>>> efc0698ee9d83c50e4f94e32bb98d3436978f70d
 }?>
 |
 </i>
