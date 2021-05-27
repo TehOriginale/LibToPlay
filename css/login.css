@@ -14,7 +14,10 @@ body {
   background-color: #2d2b2d;
   color: white;
 }
-
+.btn
+{
+  background-color: #ef0cdf;
+}
 .form-signin {
   width: 100%;
   max-width: 400px;

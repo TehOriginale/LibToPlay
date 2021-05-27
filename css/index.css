@@ -16,9 +16,21 @@ body {
 .listasContainer{
     display: flex;
 }
+.listas .list-group-item
+{
+    background-color: #6d666bb9;
+    border: 3px solid #008fff;
+
+}
+.listas .list-group-item:hover
+{
+ background-color: #793ebdf3;
+}
 
 .listasPoint {
     margin-top: 10px;
+    background-color: coral;
+    
 }
 .Index_main
 {
@@ -32,7 +44,6 @@ body {
     width: 320px;
     margin-left: 20px;
     margin-right: 20px;
-    
  
 }
 form
@@ -60,7 +71,8 @@ form
 
 .btn 
 {
-    background-color: magenta;
+    background-color: #ef0cdf;
+   
 }
 
 .filters 

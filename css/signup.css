@@ -60,7 +60,10 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
+.btn
+{
+  background-color: #ef0cdf;
+}
 #signin {
     cursor: pointer;
 }

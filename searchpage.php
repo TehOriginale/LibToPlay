@@ -27,7 +27,7 @@ foreach($games as $el) {
     <a href="gameinfo.php?gamesName=<?php echo $name?>" class="listasPoint list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1"><?php echo $name;?></h5>
-      <small>Rating <?php echo $rate;?></small>
+      <b>Rating <?php echo $rate;?></b>
     </div>
     <p class="mb-1"><?php echo $desc;?></p>
   </a>

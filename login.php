@@ -15,7 +15,7 @@
     <main class="form-signin">
         <form action="includes/login.inc.php" method="post">
             <a href="index.php"><img class="mb-4"src="content/test_logo.png" alt="" width="140" height="200"></a>
-            <h1>Login</h1>
+            <h1 style = "color: #008fff; font-style: Italic">Login</h1>
             <label for="inputLogin" class="visually-hidden">
                 Email adress / Username
             </label>
@@ -25,7 +25,7 @@
             </label>
             <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
     
-            <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Login</button>
+            <button class="w-100 btn btn-lg btn-primary" name="submit"  type="submit">Login</button>
 
             <?php
             if (isset($_GET["error"])) {
@@ -43,7 +43,7 @@
         <div class="box-signin">
         New to LibToPlay? 
         <div class="divider"></div>
-        <a id="signin" href="signup.php">Create an account</a>
+        <a id="signin" class="Logintext" href="signup.php" style = "color: #ef0cdf">Create an account</a>
         </div>
         
     </main>

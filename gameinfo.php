@@ -24,7 +24,7 @@ $tags = getTags($conn, $name);
 <div class="wrapinfo">
 <div class = "gamePhoto" >
 <figure class="infopic">
-<img src ="content/<?php echo $game['gamesPhoto']?>.jpg" height = "500" width = "350">
+<img src ="content/<?php echo $game['gamesPhoto']?>.jpg" height = "600" width = "350">
 </a>
 </div>
 <div class = "info">
@@ -32,11 +32,18 @@ $tags = getTags($conn, $name);
 <?php echo  $name?>
 </h1>
 <div>
-Tags: 
+<i>Tags: 
 <?php
 foreach($tags as $el) {
+<<<<<<< HEAD
+
+  echo '|'.$el['tag'].'';
+=======
   echo ''.$el.' ';
+>>>>>>> efc0698ee9d83c50e4f94e32bb98d3436978f70d
 }?>
+|
+</i>
 </div>
 <h3>
 <?php echo $game['gamesDesc']; ?>
@@ -47,14 +54,16 @@ foreach($tags as $el) {
     <tr>
       <th scope="col">#</th>
       <th scope="col">Rating</th>
-      <th scope="col">WhereToBuy</th>
+      <th scope="col">Where to purchase</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">#</th>
       <td><?php echo $game['gamesRating']?></td>
-      <td> Amazon<a class="btn btn-success" href="<?php echo getAmazonLink($name)?>" role="button">BuyNow </a>| G2A<a class="btn btn-success" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a></td>
+      <td> <img src = "content/amazonlogo.png" height = "30" width = "110" alt = "Amazon">
+      <a class="btn btn-success" href="<?php echo getAmazonLink($name)?>" role="button">
+      BuyNow </a>|<img src = "content/g2alogo.png" height = "30" width = "110" alt = "G2A"> <a class="btn btn-success" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a></td>
     </tr>
   </tbody>
 </table>
