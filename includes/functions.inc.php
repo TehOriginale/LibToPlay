@@ -121,7 +121,7 @@ function getGame($conn, $name) {
 }
 
 function getTags($conn, $name) {
-    $sql = "SELECT tags.tag FROM games, itemid, tags WHERE games.gamesName = ? AND games.gamesId = itemid.gamesId AND itemid.tagId = tags.tagId";
+    $sql = "SELECT tags.tag FROM games,tagitems,tags WHERE games.gamesName = ? AND games.gamesId = tagitems.gamesId AND tagitems.tagId = tags.tagId";
     $ret = array();
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {

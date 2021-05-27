@@ -19,25 +19,31 @@ require_once 'includes/dbh.inc.php';
 require_once 'includes/functions.inc.php';
 $name = $_GET['gamesName'];
 $game = getGame($conn, $name);
-//$tags = getTags($conn, $name);
+$tags = getTags($conn, $name);
 ?>
+<div class="wrapinfo">
 <div class = "gamePhoto" >
-<figure class="figure">
-<a style="float:right" class="LogoItem" href = "/RDR2Art"> <img src ="content/RDR2Art.jpg" alt = "ZaidimoArt" height = "600" width = "260">
+<figure class="infopic">
+<img src ="content/RDR2Art.jpg" alt = "ZaidimoArt" height = "500" width = "350">
 <figcaption class="figure-caption">Perfecto game 5 youuu bby!</figcaption>
 </figure>
 </a>
 </div>
-<div id = tekstas>
+<div class = "info">
 <h1>
 <?php echo  $name?>
 </h1>
-<h3>
-
-</h3>
-
+<div>
+Tags: 
+<?php
+foreach($tags as $el) {
+  echo ''.$el['tag'].' ';
+}?>
 </div>
-<div class = Lentele>
+<h3>
+<?php echo $game['gamesDesc']; ?>
+</h3>
+<div class = "infotable">
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -54,15 +60,11 @@ $game = getGame($conn, $name);
       <td>SMTH-1/5</td>
       <td> Amazon<a class="btn btn-success" href="http://www.amazon.com/" role="button" alt = Badabish>BuyNow</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>PRating</td>
-      <td>GRating</td>
-      <td> Steam<a class="btn btn-success" href="https://store.steampowered.com/" role="button" alt = BadabishSteam>BuyNow!!</a></td>
-    </tr>
   </tbody>
 </table>
 </div>
+</div>
+
+</div>
     
-</body>
-</html>
+<?php include_once 'footer.php'?>

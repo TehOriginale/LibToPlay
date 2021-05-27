@@ -71,3 +71,33 @@ form
     display: flex;
     justify-content: center;
 }
+
+.wrapinfo
+{
+    width:95%;
+    height:95%;
+    margin: auto;
+}
+
+.gamePhoto {
+    float:right;
+}
+.info
+{
+    margin:10px;
+}
+
+.infotable 
+{
+    width:70%;
+}
+
+#footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 40px;
+    background: grey;
+}
