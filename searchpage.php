@@ -3,6 +3,7 @@
   ?>
 <!-- <form action="includes/searchpage.inc.php" method="get"> -->
 <div class="listContainer">
+<main>
 <div class="list-group listas">
 <?php 
 require_once 'includes/dbh.inc.php';
@@ -29,8 +30,8 @@ foreach($games as $el) {
 
   
 </div>
+</main>
 </div>
 <!-- </form> -->
-<?php
-include_once 'footer.php';
-?>
+</body>
+</html>
