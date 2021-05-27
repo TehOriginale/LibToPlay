@@ -2,6 +2,7 @@
 class Enum {
     const ACTION = 10;
     const ADVENTURE = 10;
+    const SPORTS = 10;
 }
 
 function invalidUid($username) {
@@ -142,8 +143,11 @@ function compareWeight($tag1, $tag2) {
         case "Action":
             $w1 = ENUM::ACTION;
             break;
-        case "Adventure:":
+        case "Adventure":
             $w1 = ENUM::ADVENTURE;
+            break;
+        case "Sports":
+            $w1 = ENUM::SPORTS;
             break;
         default:
             $w1 = 1;
@@ -153,34 +157,16 @@ function compareWeight($tag1, $tag2) {
         case "Action":
             $w2 = ENUM::ACTION;
             break;
-        case "Adventure:":
+        case "Adventure":
             $w2 = ENUM::ADVENTURE;
+            break;
+        case "Sports":
+            $w2 = ENUM::SPORTS;
             break;
         default:
             $w2 = 1;
     }
-    return $w1 > $w2;
-}
-function sortWeight($ar) {
-    $n = count($ar);
-    for($i = 0; $i < $n ; $i++)
-    {
-        $low = $i;
-        for($j = $i + 1; $j < $n ; $j++)
-        {
-            if ($ar[$j] < $ar[$low])
-            {
-                $low = $j;
-            }
-        }
-        if (compareWeight(array_search($ar[$i], $ar),array_search($ar[$low], $ar)))
-        {
-            $tmp = $ar[$i];
-            $arr[$i] = $ar[$low];
-            $arr[$low] = $tmp;
-        }
-    }
-    return $ar;
+    return $w1 < $w2;
 }
 
 function get3Games($conn) {
@@ -259,8 +245,12 @@ function getSimTags($conn, $games) {
     }
     return $res;
 }
-function sortBySim($conn, $games) {
-    foreach($games as $el) {
 
+function limitDesc($text) {
+    if (str_word_count($text, 0) > 60) {
+        $words = str_word_count($text, 2);
+        $pos   = array_keys($words);
+        $text  = substr($text, 0, $pos[60]) . '...';
     }
+    return $text;
 }

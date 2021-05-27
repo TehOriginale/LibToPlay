@@ -111,3 +111,8 @@ form
     height: 40px;
     background: grey;
 }
+
+#nullgames {
+    margin-top:20px;
+    text-align: center;
+}

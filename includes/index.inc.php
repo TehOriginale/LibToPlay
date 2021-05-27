@@ -18,10 +18,17 @@ if(isset($_POST['query'])) {
     }
 }
 if(isset($_GET["submit"])) {
-    $firstgame = $_GET['firstgame'];
-    $secondgame = $_GET['secondgame'];
-    $thirdgame = $_GET['thirdgame'];
-    echo "<script>console.log('Debug Objects: " . $firstgame . "' );</script>";
-    header("location: ../searchpage.php?firstgame=$firstgame&secondgame=$secondgame&thirdgame=$thirdgame");
-    exit();
+    if((isset($_GET['firstgame']) && $_GET['firstgame'] != '')|| (isset($_GET['secondgame']) && $_GET['firstgame'] != '') || (isset($_GET['thirdgame']) && $_GET['firstgame'] != '')){
+        $firstgame = $_GET['firstgame'];
+        $secondgame = $_GET['secondgame'];
+        $thirdgame = $_GET['thirdgame'];
+        echo "<script>console.log('Debug Objects: " . $firstgame . "' );</script>";
+        header("location: ../searchpage.php?firstgame=$firstgame&secondgame=$secondgame&thirdgame=$thirdgame");
+        exit();
+    }
+    else {
+        header("location: ../index.php?error=nullgames");
+        exit();
+    }
+    
 }

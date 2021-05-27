@@ -22,9 +22,19 @@
     <input type="text" name="thirdgame" id="inputgame3" class="form-control" placeholder="Declare your third game">
   </div>
   </div>
+  <div id="nullgames">
+    <?php
+    if (isset($_GET["error"])) {
+        if($_GET["error"] == "nullgames") {
+            echo "No games entered!";
+        }
+    }
+    ?>
+  </div>
   <div id ="SubButton">
   <button type="submit" name="submit" class="btn" style =  "margin-top: 40px">Submit</button>
   </div>
+  
 </form>
 </main>
 <script type="text/javascript">
