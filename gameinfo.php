@@ -35,7 +35,7 @@ $tags = getTags($conn, $name);
 Tags: 
 <?php
 foreach($tags as $el) {
-  echo ''.$el['tag'].' ';
+  echo ''.$el.' ';
 }?>
 </div>
 <h3>

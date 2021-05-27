@@ -7,7 +7,21 @@
 <?php 
 require_once 'includes/dbh.inc.php';
 require_once 'includes/functions.inc.php';
-$games = getGames($conn);
+
+$gamest = get3Games($conn);
+$tags = getSimTags($conn, $gamest);
+
+foreach($tags as $el) {
+  echo $el.' ';
+}
+echo "<br>";
+$utags = array_count_values($tags);
+arsort($utags);
+$games = getAllSortGames($utags, $conn);
+foreach($utags as $key => $value) {
+  echo $key.' => ' .$value.' ';
+}
+echo "<br>";
 foreach($games as $el) {
     $name = $el['gamesName'];
     $desc = $el['gamesDesc'];

@@ -81,13 +81,58 @@ function loginUser($conn, $username, $pwd) {
     }
 }
 
-function getGames($conn) {
+function getAllGames($conn) {
     if(isset($_GET["firstgame"]) || isset($_GET["secondgame"]) || isset($_GET["thirdgame"])) {
         $firstgame = $_GET["firstgame"];
         $secondgame = $_GET["secondgame"];
         $thirdgame = $_GET["thirdgame"];
     }
     $sql = "SELECT * FROM games WHERE gamesName != ? AND gamesName != ? AND gamesName != ?";
+    $ret = array();
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../searchpage.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sss", $firstgame, $secondgame, $thirdgame);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+    while($ar = mysqli_fetch_assoc($resultData))
+        {
+            $ret[] = $ar;
+        }
+    mysqli_stmt_close($stmt);
+    return $ret;
+}
+
+function getAllSortGames($tags, $conn) {
+    $ret = array();
+    foreach($tags as $key=>$val) {
+        $sql = "SELECT * FROM games,tagitems,tags WHERE tags.tag = ? AND games.gamesId = tagitems.gamesId AND tagitems.tagId = tags.tagId";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../searchpage.php?error=stmtfailed");
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt, "s", $key);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+        while($ar = mysqli_fetch_assoc($resultData))
+            {
+                $ret[] = $ar;
+            }
+    }
+    mysqli_stmt_close($stmt);
+    return $ret;
+}
+
+function get3Games($conn) {
+    if(isset($_GET["firstgame"]) || isset($_GET["secondgame"]) || isset($_GET["thirdgame"])) {
+        $firstgame = $_GET["firstgame"];
+        $secondgame = $_GET["secondgame"];
+        $thirdgame = $_GET["thirdgame"];
+    }
+    $sql = "SELECT * FROM games WHERE gamesName = ? OR gamesName = ? OR gamesName = ?";
     $ret = array();
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
@@ -133,7 +178,7 @@ function getTags($conn, $name) {
     $resultData = mysqli_stmt_get_result($stmt);
     while($ar = mysqli_fetch_assoc($resultData))
         {
-            $ret[] = $ar;
+            $ret[] = $ar['tag'];
         }
     mysqli_stmt_close($stmt);
     return $ret;
@@ -149,6 +194,16 @@ function getG2ALink($name) {
     return "https://www.g2a.com/search?query=".$fname.'';
 }
 
-function sortBySim($games) {
-    
+function getSimTags($conn, $games) {
+    $res=array();
+    foreach($games as $el) {
+        $tags = getTags($conn, $el['gamesName']);
+        $res = array_merge($res, $tags);
+    }
+    return $res;
+}
+function sortBySim($conn, $games) {
+    foreach($games as $el) {
+
+    }
 }
