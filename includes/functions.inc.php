@@ -138,3 +138,13 @@ function getTags($conn, $name) {
     mysqli_stmt_close($stmt);
     return $ret;
 }
+
+function getAmazonLink($name) {
+    $fname = str_replace(' ', '+', $name);
+    return "https://www.amazon.com/s?k=".$fname.'';
+}
+
+function getG2ALink($name) {
+    $fname = str_replace(' ', '%20', $name);
+    return "https://www.g2a.com/search?query=".$fname.'';
+}

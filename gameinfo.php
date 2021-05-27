@@ -24,7 +24,7 @@ $tags = getTags($conn, $name);
 <div class="wrapinfo">
 <div class = "gamePhoto" >
 <figure class="infopic">
-<img src ="content/RDR2Art.jpg" alt = "ZaidimoArt" height = "500" width = "350">
+<img src ="content/<?php echo $game['gamesPhoto']?>" alt = "ZaidimoArt" height = "500" width = "350">
 <figcaption class="figure-caption">Perfecto game 5 youuu bby!</figcaption>
 </figure>
 </a>
@@ -48,17 +48,15 @@ foreach($tags as $el) {
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">PRating</th>
-      <th scope="col">Grating</th>
+      <th scope="col">Rating</th>
       <th scope="col">WhereToBuy</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>SMTH/5</td>
-      <td>SMTH-1/5</td>
-      <td> Amazon<a class="btn btn-success" href="http://www.amazon.com/" role="button" alt = Badabish>BuyNow</a></td>
+      <th scope="row">#</th>
+      <td><?php echo $game['gamesRating']?></td>
+      <td> Amazon<a class="btn btn-success" href="<?php echo getAmazonLink($name)?>" role="button">BuyNow </a>| G2A<a class="btn btn-success" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a></td>
     </tr>
   </tbody>
 </table>

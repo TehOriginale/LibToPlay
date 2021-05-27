@@ -2,7 +2,7 @@
 require_once "dbh.inc.php";
 if (isset($_GET['term'])) {
 
-    $query = "SELECT * FROM games WHERE gamesName LIKE ? LIMIT 25";
+    $query = "SELECT * FROM games WHERE gamesName LIKE ? OR gamesAltname LIKE ? LIMIT 25";
     $stmt = mysqli_stmt_init($conn);
     $q = $_GET['term']. '%';
 
@@ -11,7 +11,7 @@ if (isset($_GET['term'])) {
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "s", $q); // here we can use only a variable
+    mysqli_stmt_bind_param($stmt, "ss", $q, $q); // here we can use only a variable
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
     if (mysqli_num_rows($resultData) > 0) {

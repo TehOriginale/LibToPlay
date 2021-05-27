@@ -19,7 +19,6 @@ foreach($games as $el) {
       <small>Rating <?php echo $rate;?></small>
     </div>
     <p class="mb-1"><?php echo $desc;?></p>
-    <small>Donec id elit non mi porta.</small>
   </a>
   <?php }?>
 
