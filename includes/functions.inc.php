@@ -148,3 +148,7 @@ function getG2ALink($name) {
     $fname = str_replace(' ', '%20', $name);
     return "https://www.g2a.com/search?query=".$fname.'';
 }
+
+function sortBySim($games) {
+    
+}
