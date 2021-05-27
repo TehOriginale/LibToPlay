@@ -24,7 +24,7 @@ $tags = getTags($conn, $name);
 <div class="wrapinfo">
 <div class = "gamePhoto" >
 <figure class="infopic">
-<img src ="content/<?php echo $game['gamesPhoto']?>" height = "500" width = "350">
+<img src ="content/<?php echo $game['gamesPhoto']?>.jpg" height = "500" width = "350">
 </a>
 </div>
 <div class = "info">
