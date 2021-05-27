@@ -2,6 +2,8 @@ html,
 body {
   height: 100%;
   font-family: 'Roboto Mono', monospace;
+  background-color: #2d2b2d;
+  color: white;
 }
 
 .listas {
@@ -10,8 +12,9 @@ body {
     left:10%;
 }
 
+
 .listasContainer{
-    position: relative;
+    display: flex;
 }
 .listas .list-group-item
 {
@@ -29,11 +32,6 @@ body {
     background-color: coral;
     
 }
-body {
-  background-color: #2d2b2d;
-  color: white;
-}
-
 .Index_main
 {
     width: 100%;
@@ -105,10 +103,10 @@ form
 }
 
 #footer {
-    position: fixed;
     padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
+    position:fixed;
     /* Height of the footer*/ 
     height: 40px;
     background: grey;

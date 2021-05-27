@@ -3,11 +3,17 @@
   ?>
 <!-- <form action="includes/searchpage.inc.php" method="get"> -->
 <div class="listContainer">
+<main>
 <div class="list-group listas">
 <?php 
 require_once 'includes/dbh.inc.php';
 require_once 'includes/functions.inc.php';
-$games = getGames($conn);
+
+$gamest = get3Games($conn);
+$tags = getSimTags($conn, $gamest);
+$utags = array_count_values($tags);
+arsort($utags);
+$games = getAllSortGames($utags, $conn);
 foreach($games as $el) {
     $name = $el['gamesName'];
     $desc = $el['gamesDesc'];
@@ -24,8 +30,8 @@ foreach($games as $el) {
 
   
 </div>
+</main>
 </div>
 <!-- </form> -->
-<?php
-include_once 'footer.php';
-?>
+</body>
+</html>
