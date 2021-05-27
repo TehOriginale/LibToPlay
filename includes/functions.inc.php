@@ -1,4 +1,8 @@
 <?php
+class Enum {
+    const ACTION = 10;
+    const ADVENTURE = 10;
+}
 
 function invalidUid($username) {
     $result = false;
@@ -105,9 +109,12 @@ function getAllGames($conn) {
     return $ret;
 }
 
-function getAllSortGames($tags, $conn) {
+function getAllSortGames($tags, $trio, $conn) {
     $ret = array();
     $buf = array();
+    foreach($trio as $el) {
+        $buf[] = $el['gamesName'];
+    }
     foreach($tags as $key=>$val) {
         $sql = "SELECT * FROM games,tagitems,tags WHERE tags.tag = ? AND games.gamesId = tagitems.gamesId AND tagitems.tagId = tags.tagId";
         $stmt = mysqli_stmt_init($conn);
@@ -128,6 +135,52 @@ function getAllSortGames($tags, $conn) {
     }
     mysqli_stmt_close($stmt);
     return $ret;
+}
+
+function compareWeight($tag1, $tag2) {
+    switch($tag1) {
+        case "Action":
+            $w1 = ENUM::ACTION;
+            break;
+        case "Adventure:":
+            $w1 = ENUM::ADVENTURE;
+            break;
+        default:
+            $w1 = 1;
+    }
+
+    switch($tag2) {
+        case "Action":
+            $w2 = ENUM::ACTION;
+            break;
+        case "Adventure:":
+            $w2 = ENUM::ADVENTURE;
+            break;
+        default:
+            $w2 = 1;
+    }
+    return $w1 > $w2;
+}
+function sortWeight($ar) {
+    $n = count($ar);
+    for($i = 0; $i < $n ; $i++)
+    {
+        $low = $i;
+        for($j = $i + 1; $j < $n ; $j++)
+        {
+            if ($ar[$j] < $ar[$low])
+            {
+                $low = $j;
+            }
+        }
+        if (compareWeight(array_search($ar[$i], $ar),array_search($ar[$low], $ar)))
+        {
+            $tmp = $ar[$i];
+            $arr[$i] = $ar[$low];
+            $arr[$low] = $tmp;
+        }
+    }
+    return $ar;
 }
 
 function get3Games($conn) {

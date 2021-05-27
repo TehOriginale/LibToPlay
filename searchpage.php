@@ -12,8 +12,13 @@ require_once 'includes/functions.inc.php';
 $gamest = get3Games($conn);
 $tags = getSimTags($conn, $gamest);
 $utags = array_count_values($tags);
+$utags = sortWeight($utags);
 arsort($utags);
-$games = getAllSortGames($utags, $conn);
+foreach($utags as $key => $val){
+  echo $key.' => '.$val.' ';
+}
+echo"<br>";
+$games = getAllSortGames($utags, $gamest, $conn);
 foreach($games as $el) {
     $name = $el['gamesName'];
     $desc = $el['gamesDesc'];
