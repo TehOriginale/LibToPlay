@@ -57,6 +57,8 @@ form
     position: absolute;
     top:0; 
     right:0;
+    margin-top:7px;
+    margin-right:5px;
 }
 #SubButton
 { 
@@ -108,10 +110,13 @@ form
     width: 100%;
     position:fixed;
     /* Height of the footer*/ 
-    height: 40px;
-    background: grey;
+    height: 60px;
+    background: #202020;
 }
 
+#header {
+    background: #202020;
+}
 #nullgames {
     margin-top:20px;
     text-align: center;

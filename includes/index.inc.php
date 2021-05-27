@@ -1,5 +1,6 @@
 <?php
 require_once('dbh.inc.php');
+require_once('functions.inc.php');
 
 if(isset($_POST['query'])) {
     $inpText=$_POST['query'];
@@ -18,13 +19,19 @@ if(isset($_POST['query'])) {
     }
 }
 if(isset($_GET["submit"])) {
-    if((isset($_GET['firstgame']) && $_GET['firstgame'] != '')|| (isset($_GET['secondgame']) && $_GET['firstgame'] != '') || (isset($_GET['thirdgame']) && $_GET['firstgame'] != '')){
+    if((isset($_GET['firstgame']) && $_GET['firstgame'] != '')|| (isset($_GET['secondgame']) && $_GET['secondgame'] != '') || (isset($_GET['thirdgame']) && $_GET['thirdgame'] != '')){
         $firstgame = $_GET['firstgame'];
         $secondgame = $_GET['secondgame'];
         $thirdgame = $_GET['thirdgame'];
-        echo "<script>console.log('Debug Objects: " . $firstgame . "' );</script>";
-        header("location: ../searchpage.php?firstgame=$firstgame&secondgame=$secondgame&thirdgame=$thirdgame");
-        exit();
+        getGame($conn, $firstgame);
+        if(getGame($conn, $firstgame) == NULL && getGame($conn, $secondgame) == NULL && getGame($conn, $thirdgame) == NULL) {
+            header("location: ../index.php?error=nonexist");
+            exit();
+        }
+        else {
+            header("location: ../searchpage.php?firstgame=$firstgame&secondgame=$secondgame&thirdgame=$thirdgame");
+            exit();
+        }
     }
     else {
         header("location: ../index.php?error=nullgames");

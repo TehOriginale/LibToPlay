@@ -22,13 +22,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php
+require_once 'includes/dbh.inc.php';
+require_once 'includes/functions.inc.php';
+?>
+<div id="header">
 <div>
   <a class="LogoItem" href = "/index.php"> <img src ="content/test_logo.png" alt = "Logotipias" height = "50" width = "40">
 </a>
 LibToPlay
 </div>
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" style="background-color: #ef0cdf"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-secondary dropdown-toggle" style="background-color: magenta"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropdown button
   </button>
   <div class="dropdown-menu" aria-labelledby="Menu Button">
@@ -43,7 +48,8 @@ LibToPlay
         }
     ?>
     <div>
-    <a class="dropdown-item" href="/gameinfo.php">Random game of the day</a>
+    <a class="dropdown-item" href="/gameinfo.php?gamesName=<?php echo getRandomGame($conn);?>">Random game of the day</a>
     </div>
   </div>
+</div>
 </div>

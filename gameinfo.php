@@ -22,7 +22,7 @@ $tags = getTags($conn, $name);
 <i>Tags: 
 <?php
 foreach($tags as $el) {
-  echo ''.$el.' ';
+  echo ' | '.$el.' ';
 }?>
 |
 </i>

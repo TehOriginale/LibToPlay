@@ -28,6 +28,9 @@
         if($_GET["error"] == "nullgames") {
             echo "No games entered!";
         }
+        else if($_GET["error"] == "nonexist") {
+            echo "Entered game/games do not exist in our LibToPlay database";
+        }
     }
     ?>
   </div>

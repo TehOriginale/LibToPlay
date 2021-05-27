@@ -87,19 +87,13 @@ function loginUser($conn, $username, $pwd) {
 }
 
 function getAllGames($conn) {
-    if(isset($_GET["firstgame"]) || isset($_GET["secondgame"]) || isset($_GET["thirdgame"])) {
-        $firstgame = $_GET["firstgame"];
-        $secondgame = $_GET["secondgame"];
-        $thirdgame = $_GET["thirdgame"];
-    }
-    $sql = "SELECT * FROM games WHERE gamesName != ? AND gamesName != ? AND gamesName != ?";
+    $sql = "SELECT * FROM games";
     $ret = array();
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../searchpage.php?error=stmtfailed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "sss", $firstgame, $secondgame, $thirdgame);
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
     while($ar = mysqli_fetch_assoc($resultData))
@@ -197,15 +191,21 @@ function getGame($conn, $name) {
     $sql = "SELECT * FROM games WHERE gamesName = ?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../gameinfo.php?error=stmtfailed");
+        header("location: ../index.php?error=stmtfailed");
         exit();
     }
     mysqli_stmt_bind_param($stmt, "s", $name);
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
-    $ret = mysqli_fetch_assoc($resultData);
-    mysqli_stmt_close($stmt);
-    return $ret;
+    if (mysqli_num_rows($resultData)==0) {
+        mysqli_stmt_close($stmt);
+        return NULL;
+    }
+    else {
+        $ret = mysqli_fetch_assoc($resultData);
+        mysqli_stmt_close($stmt);
+        return $ret;
+    }
 }
 
 function getTags($conn, $name) {
@@ -253,4 +253,10 @@ function limitDesc($text) {
         $text  = substr($text, 0, $pos[60]) . '...';
     }
     return $text;
+}
+
+function getRandomGame($conn) {
+    $games = getAllGames($conn);
+    $key = array_rand($games);
+    return $games[$key]['gamesName'];
 }
