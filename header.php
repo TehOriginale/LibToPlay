@@ -33,8 +33,8 @@ require_once 'includes/functions.inc.php';
 LibToPlay
 </div>
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" style="background-color: magenta"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+  <button class="btn btn-secondary dropdown-toggle" style="background-color: magenta; width: 150px;"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    MENU
   </button>
   <div class="dropdown-menu" aria-labelledby="Menu Button">
   <?php
