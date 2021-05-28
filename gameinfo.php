@@ -34,18 +34,24 @@ foreach($tags as $el) {
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Rating</th>
-      <th scope="col">Where to purchase</th>
+      <th style="text-align:center;" scope="col">#</th>
+      <th style="text-align:center;" scope="col">Rating</th>
+      <th style="text-align:center;" scope="col" colspan="2">Where to purchase</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">#</th>
-      <td><?php echo $game['gamesRating']?></td>
-      <td> <img src = "content/amazonlogo.png" height = "30" width = "110" alt = "Amazon">
-      <a class="btn btn-success" href="<?php echo getAmazonLink($name)?>" role="button">
-      BuyNow </a>|<img src = "content/g2alogo.png" height = "30" width = "110" alt = "G2A"> <a class="btn btn-success" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a></td>
+      <th style="text-align:center;" scope="row">#</th>
+      <td style="text-align:center;" ><?php echo $game['gamesRating']?></td>
+      <td style="text-align:center;"> 
+        <img style="margin-left:10px;margin-right:10px;" src = "content/amazonlogo.png" height = "30" width = "110" alt = "Amazon">
+        <a style="margin-left:10px;margin-right:10px;" class="btn" href="<?php echo getAmazonLink($name)?>" role="button">
+        BuyNow </a>
+      </td>
+      <td style="text-align:center;">
+      <img style="margin-left:10px;margin-right:10px;" src = "content/g2alogo.png" height = "30" width = "110" alt = "G2A">
+        <a style="margin-left:10px;margin-right:10px;" class="btn" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a>
+      </td>
     </tr>
   </tbody>
 </table>
