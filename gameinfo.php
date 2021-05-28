@@ -45,12 +45,12 @@ foreach($tags as $el) {
       <td style="text-align:center;" ><?php echo $game['gamesRating']?></td>
       <td style="text-align:center;"> 
         <img style="margin-left:10px;margin-right:10px;" src = "content/amazonlogo.png" height = "30" width = "110" alt = "Amazon">
-        <a style="margin-left:10px;margin-right:10px;" class="btn" href="<?php echo getAmazonLink($name)?>" role="button">
+        <a target="_blank" rel="noopener noreferrer" style="margin-left:10px;margin-right:10px;" class="btn" href="<?php echo getAmazonLink($name)?>" role="button">
         BuyNow </a>
       </td>
       <td style="text-align:center;">
       <img style="margin-left:10px;margin-right:10px;" src = "content/g2alogo.png" height = "30" width = "110" alt = "G2A">
-        <a style="margin-left:10px;margin-right:10px;" class="btn" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a>
+        <a target="_blank" rel="noopener noreferrer" style="margin-left:10px;margin-right:10px;" class="btn" href="<?php echo getG2ALink($name)?>" role="button">BuyNow</a>
       </td>
     </tr>
   </tbody>
