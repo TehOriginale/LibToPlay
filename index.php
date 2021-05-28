@@ -2,11 +2,6 @@
   include_once 'header.php';
   ?>
   <form action="includes/index.inc.php" method="get">
-  <?php
-  if(isset($_SESSION["useruid"])) {
-            echo "<p>Hello there " . $_SESSION["useruid"] ."<p>";
-        }
-  ?>
   <div class="filters">
   <div class="filter-group">
     <label for="ImputGame1">Game#1</label>
